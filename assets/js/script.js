@@ -15,7 +15,7 @@ window.onload = function(){
 	  c = a + b;
 	  a = b;
 	  b = c;
-	  if (b > 999999999) {
+	  if (!(Number.isSafeInteger(b))) {
 	    b = Math.floor(b / i);
 	  }
 	  if (i > startPoint) {
