@@ -3,15 +3,15 @@
 
 window.onload = function(){
 
-	var a = 0;
-	var b = 1;
-	var c = 0;
-	var keys = 100000;
-	var startPoint = 1000;
-	var output = "";
-	var str = "";
+	let a = 0;
+	let b = 1;
+	let c = 0;
+	let keys = 1000;
+	let startPoint = 1000;
+	let table = [];
 
-	for (var i = 0; i < keys + startPoint; i++) {
+
+	for (let i = 0; i < keys + startPoint; i++) {
 	  c = a + b;
 	  a = b;
 	  b = c;
@@ -19,15 +19,14 @@ window.onload = function(){
 	    b = Math.floor(b / i);
 	  }
 	  if (i > startPoint) {
-	    str = " " + b;
-	    output = output + getDigits(str, 3) + ", ";
+		table.push(getDigits(" " + b));
 	  }
 	}
 
-	function getDigits(str, amount) {
-	  str = str.substr(str.length - amount, amount);
+	function getDigits(str) {
+	  str = str.substr(str.length - 3, 3);
 	  return str;
 	}
 
-	document.querySelector('.output').innerHTML = output;
+	document.querySelector('.output').innerHTML = table;
 }
