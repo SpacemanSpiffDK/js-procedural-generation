@@ -3,6 +3,7 @@
 
 let proceduralTable = [];
 let performanceText;
+let startPoint = 15;
 
 let js = {
 	procedural: {
@@ -11,7 +12,6 @@ let js = {
 			let a = 0;
 			let b = 1;
 			let c = 0;
-			let startPoint = 1000;
 
 			for (let i = 0; i < keys + startPoint; i++) {
 				c = a + b;
@@ -25,7 +25,7 @@ let js = {
 				}
 			}
 			let t1 = performance.now();
-			document.querySelector("#performance").innerHTML = `Generation of ${keys} numbers took ${Math.round(t1 - t0)} milliseconds`;
+			document.querySelector("#performance").innerHTML = `Generation of ${keys.toLocaleString()} numbers took ${Math.round(t1 - t0)} milliseconds`;
 		},
 		get3Digits: function(str){
 			str = str.substr(str.length - 3, 3);
@@ -45,4 +45,4 @@ let js = {
 	}
 }
 
-
+js.procedural.generate(100000);
