@@ -3,9 +3,9 @@
 
 let proceduralTable = [];
 let performanceText;
-let startPoint = 15;
+const startPoint = 15;
 
-let js = {
+const js = {
 	procedural: {
 		init: function(keys){
 			let t0 = performance.now();
